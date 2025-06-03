@@ -5,7 +5,6 @@ pipeline{
         stage ('Dep install'){
             agent{ docker { image 'node:nodejs'}}
             steps{
-                sh 'apt update'
                 sh 'sudo chown -R 995:993 "/.npm"'
                 sh 'npm install'
             }
